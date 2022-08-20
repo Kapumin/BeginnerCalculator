@@ -3,6 +3,7 @@ package com.abjt.calculator.base;
 import com.abjt.calculator.Operator;
 import com.abjt.calculator.interfaces.Calculator;
 import com.abjt.service.CalculatorService;
+import org.jetbrains.annotations.NotNull;
 
 public class BaseCalculator {
 
@@ -10,7 +11,7 @@ public class BaseCalculator {
 
     public final String INVALID_OPERATOR = "Invalid Operator";
 
-    public BaseCalculator(CalculatorService calculatorService) {
+    public BaseCalculator(@NotNull CalculatorService calculatorService) {
         calculator = calculatorService.getCalculator();
     }
 
@@ -24,7 +25,7 @@ public class BaseCalculator {
         };
     }
 
-    public void calculate(double num1, double num2, Operator operator) {
+    public void calculate(double num1, double num2, @NotNull Operator operator) {
         switch (operator) {
             case ADDITION -> showResult("The sum is : " + calculator.add(num1, num2).toString());
             case SUBTRACTION -> showResult("The difference is : " + calculator.subtract(num1, num2));
