@@ -1,12 +1,12 @@
 package com.abjt.service;
 
-import com.abjt.interfaces.Calculator;
+import com.abjt.calculator.interfaces.Calculator;
 
 public class CalculatorService implements Calculator {
 
     private static CalculatorService calculatorService = null;
 
-    private static Calculator calculator = null;
+    private  Calculator calculator = null;
 
     public static synchronized CalculatorService getCalculatorService() {
         if (calculatorService == null) {
@@ -15,8 +15,9 @@ public class CalculatorService implements Calculator {
         return calculatorService;
     }
 
-    public static synchronized Calculator getCalculator(CalculatorService calculatorService) {
-        if (calculator == null) {
+    @Override
+    public Calculator getCalculator() {
+        if (calculator == null){
             calculator = calculatorService;
         }
         return calculator;

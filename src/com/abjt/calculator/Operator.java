@@ -1,6 +1,6 @@
-package com.abjt.models;
+package com.abjt.calculator;
 
-public enum Operators {
+public enum Operator {
     ADDITION,
     SUBTRACTION,
     MULTIPLICATION,
