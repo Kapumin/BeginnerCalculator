@@ -1,4 +1,4 @@
-package com.abjt;
+package com.abjt.models;
 
 public enum Operators {
     ADDITION,

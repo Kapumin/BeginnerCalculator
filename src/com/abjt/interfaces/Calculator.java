@@ -1,4 +1,4 @@
-package com.abjt;
+package com.abjt.interfaces;
 
 public interface Calculator {
     Double add(Double x, Double y);

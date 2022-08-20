@@ -1,4 +1,6 @@
-package com.abjt;
+package com.abjt.service;
+
+import com.abjt.interfaces.Calculator;
 
 public class CalculatorService implements Calculator {
 
