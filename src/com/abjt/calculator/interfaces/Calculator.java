@@ -2,8 +2,6 @@ package com.abjt.calculator.interfaces;
 
 public interface Calculator {
 
-    Calculator getCalculator();
-
     Double add(Double x, Double y);
 
     Double subtract(Double x, Double y);

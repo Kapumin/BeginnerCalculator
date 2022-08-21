@@ -6,21 +6,11 @@ public class CalculatorService implements Calculator {
 
     private static CalculatorService calculatorService = null;
 
-    private  Calculator calculator = null;
-
     public static synchronized CalculatorService getCalculatorService() {
         if (calculatorService == null) {
             calculatorService = new CalculatorService();
         }
         return calculatorService;
-    }
-
-    @Override
-    public Calculator getCalculator() {
-        if (calculator == null){
-            calculator = calculatorService;
-        }
-        return calculator;
     }
 
     @Override

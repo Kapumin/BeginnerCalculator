@@ -1,18 +1,17 @@
 package com.abjt.calculator.base;
 
 import com.abjt.calculator.Operator;
-import com.abjt.calculator.interfaces.Calculator;
 import com.abjt.service.CalculatorService;
 import org.jetbrains.annotations.NotNull;
 
 public class BaseCalculator {
 
-    private final Calculator calculator;
+    private final CalculatorService calculatorService;
 
     public final String INVALID_OPERATOR = "Invalid Operator";
 
     public BaseCalculator(@NotNull CalculatorService calculatorService) {
-        calculator = calculatorService.getCalculator();
+        this.calculatorService = calculatorService;
     }
 
     public Operator validateOperator(int userOption) {
@@ -27,10 +26,10 @@ public class BaseCalculator {
 
     public void calculate(double num1, double num2, @NotNull Operator operator) {
         switch (operator) {
-            case ADDITION -> showResult("The sum is : " + calculator.add(num1, num2).toString());
-            case SUBTRACTION -> showResult("The difference is : " + calculator.subtract(num1, num2));
-            case MULTIPLICATION -> showResult("The product is : " + calculator.multiply(num1, num2));
-            case DIVISION -> showResult("The quotient is : " + calculator.divide(num1, num2));
+            case ADDITION -> showResult("The sum is : " + calculatorService.add(num1, num2).toString());
+            case SUBTRACTION -> showResult("The difference is : " + calculatorService.subtract(num1, num2));
+            case MULTIPLICATION -> showResult("The product is : " + calculatorService.multiply(num1, num2));
+            case DIVISION -> showResult("The quotient is : " + calculatorService.divide(num1, num2));
             default -> showResult(INVALID_OPERATOR);
         }
     }
